@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+   xml:lang="tr-tr" lang="tr-tr" >
+<head>
+      <base href="http://oyungezer.com.tr/" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="Oyun haberleri, inceleme ve videoları başta olmak üzere e-spor, film, çizgi roman gibi bir dolu içeriğin bulunduğu şahane oyun sitesi." />
+  <title>Oyungezer Online - Yerinde Duramayan Oyun Sitesi</title>
+  <link href="http://cdn.oyungezer.com.tr/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="http://oyungezer.com.tr/component/search/?format=opensearch" rel="search" title=" " type="application/opensearchdescription+xml" />
+  <link rel="stylesheet" href="http://cdn.oyungezer.com.tr/media/system/css/modal.css" type="text/css" />
+  <script src="http://cdn.oyungezer.com.tr/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/media/system/js/core.js" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/media/system/js/modal.js" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/modules/mod_ogzgames/scripts/gamefilter_v2.js?v1.14" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/modules/mod_ogzhilite/scripts/ogzhilite_mootools.js" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/modules/mod_ogznews/scripts/TabPane.js" type="text/javascript"></script>
+  <script src="http://cdn.oyungezer.com.tr/modules/mod_ogzhilite/scripts/ogzhilite_mootools.js?v1.14" type="text/javascript"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+			SqueezeBox.assign($$('a.modal'), {
+				parse: 'rel'
+			});
+		});
+var band121pos=1;
+var band121end=3;
+var band121left=0;
+
+ window.addEvent('domready', function(){
+$('hilite_band_slider121').set('morph',{	duration: 600, 	transition: 'linear'});
+	$('btn_right121').addEvent('click', function(event) {
+	 if(band121pos<band121end) {
+			band121left-=940;
+	 		$('hilite_band_slider121').morph({left:band121left});
+	 		band121pos+=1;
+	 		} else {
+	 		band121left=0;
+	 		$('hilite_band_slider121').morph({left:band121left});
+			band121pos=1;
+	 		} 
+	 	});
+	$('btn_left121').addEvent('click', function(event) {
+	 	if(band121pos>1) {
+			band121left+=940;
+	 		$('hilite_band_slider121').morph({left:band121left});
+	 		band121pos-=1;
+	 		}
+	 	});
+	});
+window.addEvent("domready", function(){
+var ogzvideoTab131 = new TabPane('ogzvideotabs131', { 
+tabSelector: 'li',
+contentSelector: '.modogzvideo_wrapper' 
+});
+});
+window.addEvent('domready', function() {
+
+			var ajaxcall_mosttalkedv= function(event) {
+				event.stop();
+				var req = new Request.HTML({
+					method: 'get',
+					url: 'index.php?option=com_ogzapi&view=mosttalkedvideos&tmpl=component',
+					onRequest: function() { 
+						//alert('Request made. Please wait...'); 
+						},
+					update: $('mosttalkedvideos'),
+					onComplete: function(response) { 
+						$('mosttalkedvideos-button').removeEvent('click',ajaxcall_mosttalkedv);
+						$('defaultvideos').setStyle('display', 'none');
+						$('popularvideos').setStyle('display', 'none');
+						$('defaultvideos-button').removeClass('active');
+						$('popularvideos-button').removeClass('active');
+						$('mosttalkedvideos').setStyle('display', 'block');
+						$('mosttalkedvideos-button').addClass('active');;
+						}
+					}).send();
+				};
+			$('mosttalkedvideos-button').addEvent('click',ajaxcall_mosttalkedv);
+		});
+window.addEvent("domready", function(){
+var ogzgaleri129=new slideshow({slidername:"ogzgaleri129",animationtime:10000,menudefault:"#ffffff",menuover:"#d5833a"});
+ogzgaleri129.addSlide(0,1262,0);
+ogzgaleri129.addSlide(1,1239,-618);
+ogzgaleri129.addSlide(2,1234,-1236);
+ogzgaleri129.addSlide(3,1225,-1854);
+ogzgaleri129.addSlide(4,1211,-2472);
+ogzgaleri129.startShow();
+});
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'oyungezer'; // required: replace example with your forum shortname
+var disqus_config = function(){
+			var config = this;
+				};
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+window.addEvent("domready", function(){
+var ogznewsTab120 = new TabPane('ogznewstabs120', { 
+tabSelector: 'li',
+contentSelector: '.ogznews_wrapper' 
+});
+});
+window.addEvent('domready', function() {
+			var ajaxcall_popular= function(event) {
+				event.stop();
+				var req = new Request.HTML({
+					method: 'get',
+					url: 'index.php?option=com_ogzapi&view=popularnews&tmpl=component',
+					onRequest: function() { 
+						//alert('Request made. Please wait...'); 
+						},
+					update: $('popularnews'),
+					onComplete: function(response) { 
+						$('popularnews-button').removeEvent('click',ajaxcall_popular);
+						$('defaultnews').setStyle('display', 'none');
+						$('mosttalkednews').setStyle('display', 'none');
+						$('defaultnews-button').removeClass('active');
+						$('mosttalkednews-button').removeClass('active');
+						$('popularnews').setStyle('display', 'block');
+						$('popularnews-button').addClass('active');
+						}
+					}).send();
+				};
+			$('popularnews-button').addEvent('click',ajaxcall_popular);
+			var ajaxcall_mosttalked= function(event) {
+				event.stop();
+				var req = new Request.HTML({
+					method: 'get',
+					url: 'index.php?option=com_ogzapi&view=mosttalkednews&tmpl=component',
+					onRequest: function() { 
+						//alert('Request made. Please wait...'); 
+						},
+					update: $('mosttalkednews'),
+					onComplete: function(response) { 
+						$('mosttalkednews-button').removeEvent('click',ajaxcall_mosttalked);
+						$('defaultnews').setStyle('display', 'none');
+						$('popularnews').setStyle('display', 'none');
+						$('defaultnews-button').removeClass('active');
+						$('popularnews-button').removeClass('active');
+						$('mosttalkednews').setStyle('display', 'block');
+						$('mosttalkednews-button').addClass('active');;
+						}
+					}).send();
+				};
+			$('mosttalkednews-button').addEvent('click',ajaxcall_mosttalked);
+		});
+window.addEvent("domready", function(){
+var ogzhilite117=new slideshow({slidername:"ogzhilite117",animationtime: "20000",menudefault:"#b5b5b5",menuover:"#d16e0e",menuanim:"true"});
+ogzhilite117.addSlide(0,1280,0);
+ogzhilite117.addSlide(1,1279,-940);
+ogzhilite117.addSlide(2,1278,-1880);
+ogzhilite117.addSlide(3,1277,-2820);
+ogzhilite117.addSlide(4,1276,-3760);
+ogzhilite117.startShow();
+});
+
+  </script>
+
+	<meta name="viewport" content="width=device-width" />
+    <link href="http://cdn.oyungezer.com.tr/templates/system/css/system.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.oyungezer.com.tr/templates/system/css/general.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.oyungezer.com.tr/templates/oyungezer/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.oyungezer.com.tr/templates/oyungezer/css/960_12_col.css?v0.1" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.oyungezer.com.tr/templates/oyungezer/css/text.css?v1.77" type="text/css" />
+    <link rel="stylesheet" href="http://cdn.oyungezer.com.tr/templates/oyungezer/css/template.css?v4.59" type="text/css" />
+    <script type="text/javascript" src="http://cdn.oyungezer.com.tr/templates/oyungezer/js/adv.js" ></script>
+	<script type="text/javascript">
+	<!-- Google Analytics -->
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-2755830-1', 'auto');
+	ga('send', 'pageview');
+
+	<!-- End Google Analytics -->
+
+	</script>
+			<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "WebSite",
+		  "url": "https://oyungezer.com.tr/",
+		  "potentialAction": {
+		    "@type": "SearchAction",
+		    "target": "http://oyungezer.com.tr/arama?searchword={search_term_string}",
+		    "query-input": "required name=search_term_string"
+		  }
+		}
+		</script>
+		<script type='text/javascript'>
+	  var googletag = googletag || {};
+	  googletag.cmd = googletag.cmd || [];
+	  (function() {
+	    var gads = document.createElement('script');
+	    gads.async = true;
+	    gads.type = 'text/javascript';
+	    var useSSL = 'https:' == document.location.protocol;
+	    gads.src = (useSSL ? 'https:' : 'http:') +
+	      '//www.googletagservices.com/tag/js/gpt.js';
+	    var node = document.getElementsByTagName('script')[0];
+	    node.parentNode.insertBefore(gads, node);
+	  })();
+	</script>
+	</head>
+    <body id="ogz">
+		<div id="vanillabar">
+			<div id="vanilla_wrapper">
+				<div id="ogzvanilla" class="ogzvanilla">
+	<div class="vanilla-photo" id="vanilla-photo" ><img src="http://cdn.oyungezer.com.tr/forum/plugins/Gravatar/default.gif" alt="avatar"><div class="vanilla-user"><ul id="vanillamenu">
+						<li class="NonTab vanilla-login">
+							<a class="SignInPopup vanilla-logout" href="http://oyungezer.com.tr/forum/entry/signin?Target=http://oyungezer.com.tr/">Giriş</a>
+						</li>
+						<li class="NonTab vanilla-login">
+							<a class="vanilla-logout " href="http://oyungezer.com.tr/forum/entry/register">Kayıt</a>
+						</li>
+					</ul></div></div></div>
+				<form action="/" method="post">
+	<div class="search">
+		<input type="image" class="button" alt="OGZ Arama" src="http://cdn.oyungezer.com.tr/templates/oyungezer/images/searchButton.gif" onclick="this.form.searchword.focus();"/><label for="mod-search-searchword"> </label><input name="searchword" id="mod-search-searchword" maxlength="50"  class="inputbox" type="text" size="25" value=" "  onblur="if (this.value=='') this.value=' ';" onfocus="if (this.value==' ') this.value='';" />	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="104" />
+	</div>
+</form>
+
+			</div>
+		</div>
+					<div id="pageskin" >
+				<div class="bannergroup-pageskin">
+
+	<div class="banneritem">
+										<script src="http://sam.setimedia.com/oyungezer/ps"></script>				<div class="clr"></div>
+	</div>
+
+</div>
+
+			</div>
+				<div id="social">
+			<div class="bannergroup-728">
+
+	<div class="banneritem">
+										<script src="http://sam.setimedia.com/oyungezer/ld"></script>				<div class="clr"></div>
+	</div>
+
+</div>
+<div id="ogzsocial" class="ogzsocial">
+	<div class="ogzsocial_row">
+	<a href="http://www.facebook.com/oyungezer" onclick="ga('send', 'event', 'Home - Social', 'click', 'facebook');">
+		<div class="socialcount" id="fbcount" >273 bin</div>
+	</a>
+	<a href="http://twitter.com/oyungezer" onclick="ga('send', 'event', 'Home - Social', 'click', 'twitter');">
+		<div class="socialcount" id="twcount" >82 bin</div>
+	</a>
+	</div>
+		
+	<div class="ogzsocial_row">
+	<a href="http://steamcommunity.com/groups/oyungezer" onclick="ga('send', 'event', 'Home - Social', 'click', 'steam');">
+		<div class="socialcount" id="stcount" >15 bin</div>
+	</a>
+	<a href="http://www.youtube.com/user/oyungezer" onclick="ga('send', 'event', 'Home - Social', 'click', 'youtube');">
+		<div class="socialcount" id="ytcount" >181 bin</div>
+	</a>
+	</div>
+</div>
+		</div>
+		<div class="clear"></div>
+		<div id="navigation">
+			<div class="logoheader">
+				<h1 id="logo">
+											<a href="/">
+							<img src="http://cdn.oyungezer.com.tr/images/ogzonline_logo.png"  alt="Oyungezer Online" />
+						</a>
+															<span class="headerdesc">
+											</span>
+				</h1>
+			</div>
+			<div class="mainmenu">
+				
+<ul class="menu" id="ogzdergi-kapak">
+<li class="item-255"><a class="ogzdergi" href="http://oyungezer.com.tr/forum/discussion/1651599/oyungezer-118-agustos-2017" target="_blank" onclick="ga('send', 'event', 'Home - Menu', 'click', 'http://oyungezer.com.tr/forum/discussion/1651599/oyungezer-118-agustos-2017');" title="Oyungezer'de bu ay!" ><img src="http://cdn.oyungezer.com.tr/images/ogz_dergi/ogz_118_kapak_s.jpg" alt="Oyungezer'de bu ay!" /></a></li></ul>
+
+<ul class="menu" id="nav">
+<li class="item-104 current active"><a class="anasayfa" href="/"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'anasayfa');"><img src="http://cdn.oyungezer.com.tr/images/anasayfa.png" alt="Anasayfa" /></a></li><li class="item-103"><a href="/haber"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'haber');">Haber</a></li><li class="item-119"><a href="/forum/"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'Forum');">Forum</a></li><li class="item-143"><a href="/video"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'video');">VİDEO</a></li><li class="item-118"><a href="/galeri"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'galeri');">GALERİ</a></li><li class="item-438"><a class="ogzvr" href="/ogzvr"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'OGZVR');">OGZVR</a></li><li class="item-238 deeper parent"><a class="ogzdergi" href="http://dukkan.oyungezer.com.tr" target="_blank" onclick="ga('send', 'event', 'Home - Menu', 'click', 'http://dukkan.oyungezer.com.tr');" title="SetiDükkan" >DÜKKAN</a><ul><li class="item-239"><a class="ogzdergi-kapak" href="/?Itemid=255" title="Oyungezer'de bu ay!"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'Oyungezer'de bu ay!');">Oyungezer'de bu ay!</a></li></ul></li></ul>
+
+<ul class="menunodes" id="nodemenu">
+<li class="item-454"><a href="/prey"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'prey');">Prey</a></li><li class="item-456"><a href="/call-of-duty-wwii"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'call-of-duty-wwii');">Call of Duty: WWII</a></li><li class="item-458"><a href="/far-cry-5"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'far-cry-5');">Far Cry 5</a></li><li class="item-459"><a href="/pubg"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'pubg');">PUBG</a></li><li class="item-443"><a href="/battlefield-1"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'battlefield-1');">Battlefield 1</a></li><li class="item-392"><a href="/league-of-legends"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'league-of-legends');">League of Legends</a></li></ul>
+
+			</div>
+			<div class="main-menu-m">
+				<select name="header-menu" onchange="location = this.options[this.selectedIndex].value; ga('send', 'event', 'Home - Menu', 'click', this.options[this.selectedIndex].text);">
+					<option>MENÜ</option>
+					<option value="/">Ana Sayfa</option>
+					<option value="/haber">Haber</option>
+					<option value="/forum">Forum</option>
+					<option value="/video">Video</option>
+					<option value="/galeri">Galeri</option>
+					<option value="/ogzvr">OGZVR</option>
+										<option value="http://dukkan.oyungezer.com.tr">Satış ve Abonelik</option>
+					<option value="http://oyungezer.com.tr/forum/discussion/1651490/oyungezer-117-temmuz-2017">Oyungezer'de bu ay!</option>
+					<option>+ Bölümler</option>
+					<option value="/horizon-zero-dawn">&nbsp;&nbsp;- Horizon Zero Dawn</option>
+					<option value="/fifa-17">&nbsp;&nbsp;- FIFA 17</option>
+					<option value="/for-honor">&nbsp;&nbsp;- For Honor</option>
+					<option value="/battlefield-1">&nbsp;&nbsp;- Battlefield 1</option>
+					<option value="https://www.twitch.tv/oyungezertv">&nbsp;&nbsp;- Twitch</option>
+					<option value="/overwatch">&nbsp;&nbsp;- Overwatch</option>
+					<option>+ İletişim</option>
+					<option value="/hakkimizda">&nbsp;&nbsp;- Hakkımızda</option>
+					<option value="/reklam">&nbsp;&nbsp;- Reklam</option>
+					<option value="/yazarlar">&nbsp;&nbsp;- Yazarlar</option>
+				</select>
+			</div>
+		</div>
+		<script type="text/javascript">// <![CDATA[
+		if (document.getElementById("TestAdBlock") == undefined && false)
+		{
+			document.write('<div class="support-us">Bize destek olmak için lütfen sitemizi <u>Adblock</u> güvenilir listenize ekleyiniz.</div>');
+		}
+		// ]]>
+		</script>
+		<div id="message">
+			
+<div id="system-message-container">
+</div>
+		</div>
+		<div class="container_12 push">
+						<div id="hilite" class="grid_12">
+				<div id="ogzhilite117" class="ogzhilite" style="width:940px">
+		<div class="hilite_slider" id="ogzhilite117_slider" style="width:4700px">
+					<div id="ogzhilite_slide1280" class="hilite_slide" style="height:200px">
+				<a href="http://oyungezer.com.tr/haber/50499-pubg-toplamda-tam-25-bin-yil-oynanmis" onclick="ga('send', 'event', 'Home - Hilite', 'click', '0 - main link');">
+				<div class="hilite_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/anasayfa/pubghilite-istatistik.jpg');height:200px;width:940px; background-size: contain;">
+				<div class="colorize colorize-none"></div>
+										<div class="hilite_title">
+							PUBG İstatistikleri						</div>
+					<div class="subtext_main">
+											</div><br/>
+									<div class="subwrapper">
+						<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50499-pubg-toplamda-tam-25-bin-yil-oynanmis" onclick="ga('send', 'event', 'Home - Hilite', 'click', '0 - sub link 1');">
+								Keskin Nişancı							<span class="subtext">
+								PUBG'de neredeyse 7 kilometreden düşman öldüren oyuncular var!							</span>
+							</a>
+						</div>
+											<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50425-devler-kapisiyor-pubg-oyuncu-sayisi-ile-cs-go-ya-kafa-tutuyor" onclick="ga('send', 'event', 'Home - Hilite', 'click', '0 - sub link 2');">
+								Oyuncu Sayısı							<span class="subtext">
+								PUBG'nin satış sayısı rekor kırdı. Aynı anda CS'den fazla oynanıyor!							</span>
+							</a>
+						</div>
+															</div>
+												</div>
+				</a>
+			</div>
+					<div id="ogzhilite_slide1279" class="hilite_slide" style="height:200px">
+				<a href="http://oyungezer.com.tr/haber/50486-en-iyisinden-en-kotusune-yuzuklerin-efendisi-oyunlari" onclick="ga('send', 'event', 'Home - Hilite', 'click', '1 - main link');">
+				<div class="hilite_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/anasayfa/lotr-oyunlari-hilite.jpg');height:200px;width:940px; background-size: contain;">
+				<div class="colorize colorize-none"></div>
+										<div class="hilite_title">
+							Yüzüklerin Efendisi Oyunları						</div>
+					<div class="subtext_main">
+											</div><br/>
+									<div class="subwrapper">
+						<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50486-en-iyisinden-en-kotusune-yuzuklerin-efendisi-oyunlari" onclick="ga('send', 'event', 'Home - Hilite', 'click', '1 - sub link 1');">
+								Orta Dünya Oyunları							<span class="subtext">
+								En iyisinden en kötüsüne bizde iz bırakan 10 Yüzüklerin Efendisi oyunu.							</span>
+							</a>
+						</div>
+											<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50420-middle-earth-shadow-of-war-da-gercek-para-ile-esya-satin-alinabilecek" onclick="ga('send', 'event', 'Home - Hilite', 'click', '1 - sub link 2');">
+								Ork Satın Almak							<span class="subtext">
+								Middle-earth: Shadow of War'da gerçek parayla Ork alabileceğiz.							</span>
+							</a>
+						</div>
+															</div>
+												</div>
+				</a>
+			</div>
+					<div id="ogzhilite_slide1278" class="hilite_slide" style="height:200px">
+				<a href="http://oyungezer.com.tr/haber/50489-yil-sonu-cikacak-en-bomba-10-oyun?showall=&start=1" onclick="ga('send', 'event', 'Home - Hilite', 'click', '2 - main link');">
+				<div class="hilite_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/anasayfa/hilite10oyunnnnnnn.jpg');height:200px;width:940px; background-size: contain;">
+				<div class="colorize colorize-none"></div>
+										<div class="hilite_title">
+							2017'de Çıkacak Oyunlar						</div>
+					<div class="subtext_main">
+											</div><br/>
+									<div class="subwrapper">
+						<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50489-yil-sonu-cikacak-en-bomba-10-oyun?showall=&start=1" onclick="ga('send', 'event', 'Home - Hilite', 'click', '2 - sub link 1');">
+								Yakında Çıkacaklar!							<span class="subtext">
+								2017'nin son döneminde oyuncularla buluşacak bomba oyunlar listesi!							</span>
+							</a>
+						</div>
+											<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50475-kara-sovalye-arsivleri-batman-oyunlari-tarihcesi" onclick="ga('send', 'event', 'Home - Hilite', 'click', '2 - sub link 2');">
+								Batman Oyunları							<span class="subtext">
+								Dünden bugüne iz bırakan Batman oyunlarını ele aldık.							</span>
+							</a>
+						</div>
+															</div>
+												</div>
+				</a>
+			</div>
+					<div id="ogzhilite_slide1277" class="hilite_slide" style="height:200px">
+				<a href="http://oyungezer.com.tr/haber/50466-oyun-dunyasinin-karanlik-yuzu-ses-sanatcilari-grevi" onclick="ga('send', 'event', 'Home - Hilite', 'click', '3 - main link');">
+				<div class="hilite_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/anasayfa/sesgrev-hilite.jpg');height:200px;width:940px; background-size: contain;">
+				<div class="colorize colorize-none"></div>
+										<div class="hilite_title">
+							Ses Sanatçıları Grevi						</div>
+					<div class="subtext_main">
+											</div><br/>
+									<div class="subwrapper">
+						<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50466-oyun-dunyasinin-karanlik-yuzu-ses-sanatcilari-grevi" onclick="ga('send', 'event', 'Home - Hilite', 'click', '3 - sub link 1');">
+								Sendika Grevi							<span class="subtext">
+								Amerika'da ses sanatçıları grevde, yapımcı ve dağıtımcılar sıkıntıda. Peki, sanatçılar ne istiyor?							</span>
+							</a>
+						</div>
+											<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50478-googlein-yapay-zekasi-deepmind-simdi-starcraft-ogrenecek" onclick="ga('send', 'event', 'Home - Hilite', 'click', '3 - sub link 2');">
+								Yapay Zeka							<span class="subtext">
+								Google'ın yapay zekası şimdi de StarCraft öğreniyor. Adım adım Skynet!							</span>
+							</a>
+						</div>
+															</div>
+												</div>
+				</a>
+			</div>
+					<div id="ogzhilite_slide1276" class="hilite_slide" style="height:200px">
+				<a href="http://oyungezer.com.tr/haber/50468-venom-filmine-carnage-geliyor-olabilir" onclick="ga('send', 'event', 'Home - Hilite', 'click', '4 - main link');">
+				<div class="hilite_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/anasayfa/venom-carnage-hiltie.jpg');height:200px;width:940px; background-size: contain;">
+				<div class="colorize colorize-none"></div>
+										<div class="hilite_title">
+							Venom vs Carnage						</div>
+					<div class="subtext_main">
+											</div><br/>
+									<div class="subwrapper">
+						<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50468-venom-filmine-carnage-geliyor-olabilir" onclick="ga('send', 'event', 'Home - Hilite', 'click', '4 - sub link 1');">
+								Carnage!							<span class="subtext">
+								Sony'nin Venom filminde baş düşman belli oldu gibi. Peki kim oynayacak Carnage'ı?							</span>
+							</a>
+						</div>
+											<div class="subtitle">
+							<a href="http://oyungezer.com.tr/haber/50377-jeffrey-dean-morgan-dan-batman-olur-mu" onclick="ga('send', 'event', 'Home - Hilite', 'click', '4 - sub link 2');">
+								Alt-Medya #17							<span class="subtext">
+								Deadpool'da durumlar karışık. Domino'nun siyahi olması ortalığı karıştırdı.							</span>
+							</a>
+						</div>
+															</div>
+												</div>
+				</a>
+			</div>
+				</div>
+		<div class="ogzhilite_menu">
+			<div id='ogzhilite117_menuitem1280' class='slidemenu_item' style='width:20%'>PUBG İstatistikleri<div id='ogzhilite117_menutimer1280' class='slidemenu_timer' style='height:3px;margin-top:0px'></div></div><div id='ogzhilite117_menuitem1279' class='slidemenu_item' style='width:20%'>Yüzüklerin Efendisi Oyunları<div id='ogzhilite117_menutimer1279' class='slidemenu_timer' style='height:3px;margin-top:0px'></div></div><div id='ogzhilite117_menuitem1278' class='slidemenu_item' style='width:20%'>2017'de Çıkacak Oyunlar<div id='ogzhilite117_menutimer1278' class='slidemenu_timer' style='height:3px;margin-top:0px'></div></div><div id='ogzhilite117_menuitem1277' class='slidemenu_item' style='width:20%'>Ses Sanatçıları Grevi<div id='ogzhilite117_menutimer1277' class='slidemenu_timer' style='height:3px;margin-top:0px'></div></div><div id='ogzhilite117_menuitem1276' class='slidemenu_item' style='width:20%'>Venom vs Carnage<div id='ogzhilite117_menutimer1276' class='slidemenu_timer' style='height:3px;margin-top:0px'></div></div>		</div>
+</div>
+
+			</div>
+			<div class="clear"></div>
+			
+				<div class="primer_wrapper">
+					<div id="component">
+						
+					</div>
+											<div id="left1" class="grid_4">
+							<div id="ogznews120" class="ogznews">
+<a href="/haber" onclick="ga('send', 'event', 'Home - News', 'click', 'main title');"><div class="module_title">HABERLER</div></a>	<div id="ogznewstabs120">
+		<ul class="tabs">
+			<li class="tab" id="defaultnews-button" onclick="ga('send', 'event', 'Tabs', 'click', 'News - Recent');">EN YENİ</li>
+			<li class="tab" id="popularnews-button" onclick="ga('send', 'event', 'Tabs', 'click', 'News - Popular');">EN POPÜLER</li>
+			<li class="tab" id="mosttalkednews-button" onclick="ga('send', 'event', 'Tabs', 'click', 'News - Most Talked');">EN ÇOK TARTIŞILAN</li>
+		</ul>
+		<div class="ogznews_wrapper" id="defaultnews">
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50540-uncharted-kayip-miras-in-inceleme-puanlari#disqus_thread" data-disqus-identifier="118808c821_articleid_50540" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '0. comment link');">0</a></div>
+		<a href="/haber/50540-uncharted-kayip-miras-in-inceleme-puanlari" onclick="ga('send', 'event', 'Home - News', 'click', 'first col 0. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/kaypmiras-small.jpg" width="300" height="156" alt="Uncharted: Kayıp Miras'ın İnceleme Puanları Ortaya Çıktı"><br/>
+					<span class='ogztitle'>Uncharted: Kayıp Miras</span>'ın İnceleme Puanları Ortaya Çıktı</a>
+		</h4>
+<div class="ogznews-shortnews"><span class="ogznews-shortnews-hypen">&#8220;</span>Nvidia yeni GeForce Game Ready 385.28 WHQL sürücüsünü yayınladı.</div>								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50539-justice-league-filminden-yeni-bir-fotograf-yayimlandi#disqus_thread" data-disqus-identifier="118808c821_articleid_50539" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '1. comment link');">0</a></div>
+		<a href="/haber/50539-justice-league-filminden-yeni-bir-fotograf-yayimlandi" onclick="ga('send', 'event', 'Home - News', 'click', 'first col 1. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/justiceleague-small.jpg" width="300" height="156" alt="Justice League Filminden Yeni Bir Fotoğraf Yayımlandı"><br/>
+					<span class='ogztitle'>Justice League</span> Filminden Yeni Bir <span class='ogztitle'>Fotoğraf</span> Yayımlandı</a>
+		</h4>
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50538-playerunknown-s-battlegrounds-artik-dunyanin-en-cok-satan-erken-erisim-oyunu#disqus_thread" data-disqus-identifier="118808c821_articleid_50538" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '2. comment link');">0</a></div>
+		<a href="/haber/50538-playerunknown-s-battlegrounds-artik-dunyanin-en-cok-satan-erken-erisim-oyunu" onclick="ga('send', 'event', 'Home - News', 'click', 'first col 2. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/pubg-small.jpg" width="300" height="156" alt="PlayerUnknown's Battlegrounds Artık Dünyanın En Çok Satan Erken Erişim Oyunu"><br/>
+					<span class='ogztitle'>PlayerUnknown's Battlegrounds</span> Artık Dünyanın En Çok Satan <span class='ogztitle'>Erken Erişim Oyunu</span></a>
+		</h4>
+<div class="ogznews-shortnews"><span class="ogznews-shortnews-hypen">&#8220;</span>Kripto para birimi Bitcoin, 4000 Amerikan dolarını geçti.</div>								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50537-hani-prey-e-pc-icin-demo-lazim-degildi-arkane-pc-demosu-sessiz-sedasiz-cikti#disqus_thread" data-disqus-identifier="118808c821_articleid_50537" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '3. comment link');">0</a></div>
+		<a href="/haber/50537-hani-prey-e-pc-icin-demo-lazim-degildi-arkane-pc-demosu-sessiz-sedasiz-cikti" onclick="ga('send', 'event', 'Home - News', 'click', 'first col 3. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/prey-small.jpg" width="300" height="156" alt="Hani Prey'e PC İçin Demo Lazım Değildi Arkane? Prey'in PC Demosu Çıktı!"><br/>
+					Hani Prey'e PC İçin <span class='ogztitle'>Demo Lazım Değildi</span> Arkane? Prey'in <span class='ogztitle'>PC Demosu</span> Çıktı!</a>
+		</h4>
+					</div>
+		<div class="ogznews_wrapper" id="popularnews">
+			
+		</div>
+		<div class="ogznews_wrapper" id="mosttalkednews">
+			
+		</div>
+	</div>
+		</div>
+
+						</div>
+																<div id="mid1" class="grid_4">
+							<div id="ogzvideo131" class="ogzvideo">
+<a href="/video" onclick="ga('send', 'event', 'Home - Videos', 'click', 'main title');"><div class="module_title">VİDEOLAR</div></a>	<div id="ogzvideotabs131">
+		<ul class="tabs">
+			<li class="tab"	id="defaultvideos-button" onclick="ga('send', 'event', 'Tabs', 'click', 'Video - Recent');">EN YENİ</li>
+			<li class="tab"	id="popularvideos-button" onclick="ga('send', 'event', 'Tabs', 'click', 'Video - Featured');">SEÇİLMİŞ</li>
+			<li class="tab"	id="mosttalkedvideos-button" onclick="ga('send', 'event', 'Tabs', 'click', 'Video - Most Talked');">EN ÇOK TARTIŞILAN</li>
+		</ul>
+		<div class="modogzvideo_wrapper" id="defaultvideos">
+							<div class="modytplayer">
+						<a href="/video/28-trailer/1880-game-of-thrones-7-sezon-5-bölüm-incelemesi-suicide-squad-hazır" title="Game of Thrones 7.Sezon 5.Bölüm İncelemesi - Suicide Squad Hazır!" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent first video');">
+						<div class="ogzvideo-bigimg tab" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzvideos/7x5inceleme.jpg')"><div class="ogzvideo-bigplayarrow"></div><h4 class="ogzvideo-bigtitle-tab">Game of Thrones 7.Sezon 5.Bölüm İncelemesi - Suicide Squad Hazır!</h4></div></a></div>							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1879-alt-medya-18-cılız-cable-gelmiştir" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 1. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/ogzvideos/cablealtmedya18.jpg" class="ogzvideo-img" width="142" height="80" alt="Alt Medya #18 - Cılız Cable Gelmiştir!">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1879-alt-medya-18-cılız-cable-gelmiştir" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 1. video');">
+		<h4 class="ogzvideo-title">
+						Alt Medya #18 - Cılız Cable Gelmiştir!		</h4>
+		</a>
+	
+</div>
+							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1878-game-of-thrones-7-sezon-4-bölüm-incelemesi" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 2. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/ogzvideos/got7x4.jpg" class="ogzvideo-img" width="142" height="80" alt="Game of Thrones 7.Sezon 4.Bölüm İncelemesi">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1878-game-of-thrones-7-sezon-4-bölüm-incelemesi" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 2. video');">
+		<h4 class="ogzvideo-title">
+						Game of Thrones 7.Sezon 4.Bölüm İncelemesi		</h4>
+		</a>
+	
+</div>
+							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1877-alt-medya-17-deadpool-un-domino-sundan-ilk-görsel" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 3. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/ogzvideos/altmedya-17bu.jpg" class="ogzvideo-img" width="142" height="80" alt="Alt Medya #17 - Deadpool'un Domino'sundan İlk Görsel!">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1877-alt-medya-17-deadpool-un-domino-sundan-ilk-görsel" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 3. video');">
+		<h4 class="ogzvideo-title">
+						Alt Medya #17 - Deadpool'un Domino'sundan İlk Görsel!		</h4>
+		</a>
+	
+</div>
+							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1876-fornite" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 4. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/ogzhilite/anasayfa/fortnite.jpg" class="ogzvideo-img" width="142" height="80" alt="Fornite - Erken Erişim İnceleme">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1876-fornite" onclick="ga('send', 'event', 'Home - Videos', 'click', 'recent's 4. video');">
+		<h4 class="ogzvideo-title">
+						Fornite - Erken Erişim İnceleme		</h4>
+		</a>
+	
+</div>
+						<script src="https://apis.google.com/js/platform.js"></script>
+			<div class="ogzvideo-video" style="text-align:center;">
+				<h5 style="margin: 5px;">Kanalımıza abone oldunuz mu?</h5>
+				<div class="g-ytsubscribe" data-channel="Oyungezer" data-layout="full" data-count="default"></div>
+			</div>
+		</div>
+		<div class="modogzvideo_wrapper" id="popularvideos">
+							<div class="modytplayer"><a href="/video/28-trailer/1843-yeni-last-of-us-mı-geliyor-days-gone-e3-2017-değerlendirmesi" title="Yeni Last of Us Mı Geliyor? - Days Gone E3 2017 Değerlendirmesi" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured first video');">
+					<div class="ogzvideo-bigimg tab" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzvideos/days_gone_e3_2017_deger.jpg')"><div class="ogzvideo-bigplayarrow"></div><h4 class="ogzvideo-bigtitle-tab">Yeni Last of Us Mı Geliyor? - Days Gone E3 2017 Değerlendirmesi</h4></div></a></div>							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1842-fifa-18-türkçe-olacak-mi-türkiye-ligi-var-mi-ea-games-e-sorduk" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 1. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/ogzvideos/fifarop-vid.jpg" class="ogzvideo-img" width="142" height="80" alt="FIFA 18 TÜRKÇE OLACAK MI?/TÜRKİYE LİGİ VAR MI? - EA Games'e Sorduk">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1842-fifa-18-türkçe-olacak-mi-türkiye-ligi-var-mi-ea-games-e-sorduk" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 1. video');">
+		<h4 class="ogzvideo-title">
+						FIFA 18 TÜRKÇE OLACAK MI?/TÜRKİYE LİGİ VAR MI? - EA Games'e Sorduk		</h4>
+		</a>
+	
+</div>
+							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1841-alt-medya-10-oyungezer-ler-sordu,-biz-cevapladık" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 2. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/ogzvideos/altmedya-10-video.jpg" class="ogzvideo-img" width="142" height="80" alt="Alt Medya #10 - Oyungezer'ler Sordu, Biz Cevapladık!">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1841-alt-medya-10-oyungezer-ler-sordu,-biz-cevapladık" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 2. video');">
+		<h4 class="ogzvideo-title">
+						Alt Medya #10 - Oyungezer'ler Sordu, Biz Cevapladık!		</h4>
+		</a>
+	
+</div>
+							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1835-mount-blade-ii-bannerlord-u-armağan-yavuz-la-birlikte-oynadık" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 3. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/06/15/mount-and-blade-bannerlord-video.jpg" class="ogzvideo-img" width="142" height="80" alt="Mount & Blade II: Bannerlord'u Armağan Yavuz'la Birlikte Oynadık!">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1835-mount-blade-ii-bannerlord-u-armağan-yavuz-la-birlikte-oynadık" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 3. video');">
+		<h4 class="ogzvideo-title">
+						Mount & Blade II: Bannerlord'u Armağan Yavuz'la Birlikte Oynadık!		</h4>
+		</a>
+	
+</div>
+							<div class="ogzvideo-video">
+
+			<a href="/video/28-trailer/1829-yeni-need-for-speed-i-oynadik-need-for-speed-payback" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 4. video');">
+			<div class="ogzvideo-play">
+			<div class="ogzvideo-playarrow"></div>
+			<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/06/13/nfs-payback-video.jpg" class="ogzvideo-img" width="142" height="80" alt="YENİ NEED FOR SPEED'İ OYNADIK! - Need For Speed Payback">
+			</div>
+		</a>
+		<a href="/video/28-trailer/1829-yeni-need-for-speed-i-oynadik-need-for-speed-payback" onclick="ga('send', 'event', 'Home - Videos', 'click', 'featured's 4. video');">
+		<h4 class="ogzvideo-title">
+						YENİ NEED FOR SPEED'İ OYNADIK! - Need For Speed Payback		</h4>
+		</a>
+	
+</div>
+					</div>
+		<div class="modogzvideo_wrapper" id="mosttalkedvideos">
+			
+		</div>
+	</div>
+	
+	<a href="/video" class="ogzmore-link" onclick="ga('send', 'event', 'Home - Videos', 'click', 'read more');">
+		<div class="ogzvideo-more">DAHA FAZLASI		<span class="ogzmore-arrow"></span>
+	</div></a>
+	
+</div>
+<div id="ogzgaleri129" class="ogzgaleri-module" style="width:618px">
+	<div class="module_title">
+		GALERİ	</div>		<div class="ogzgaleri" style="width:618px">
+		<div class="ogzgaleri_slider" id="ogzgaleri129_slider" style="width:3090px">
+					<div id="ogzgaleri_slide1262" class="ogzgaleri_slide" style="width:618px">
+				<a href="http://oyungezer.com.tr/galeri/oyun-kueltuerue/oynamaktan-nefret-ettigimiz-bolumler/oynamaktan-nefret-ettigimiz-bolumler-91573" onclick="ga('send', 'event', 'Home - Gallery', 'click', '0. link');">
+										<div class="galeri_img" >
+					<img src="http://cdn.oyungezer.com.tr/images/ogzhilite/galeri/lance-vance-gorevi.jpg" width="445" height="290" alt="Oynamaktan Nefret Ettiğimiz Bölümler">
+					</div>
+					<div class="galeri_info" style="display: table; height: 290px; #position: relative; overflow: hidden;">
+						<div style="display: table-cell; vertical-align: middle;">
+							<div style=" #position: relative; #top: -50%">
+								<h2 class="galeri_title">
+									Oynamaktan Nefret Ettiğimiz Bölümler								</h2>
+								<span class="galeri_subtext">
+								<p>Alt + F4 çektiren, illallah ettiren ve bir türlü geçilemeyen oyun bölümleri...</p>								</span>
+							 </div>
+						</div>
+					</div>
+				</a>
+			</div>
+					<div id="ogzgaleri_slide1239" class="ogzgaleri_slide" style="width:618px">
+				<a href="http://oyungezer.com.tr/galeri/oyun-kueltuerue/steam-yaz-indirimlerinde-ucuzlamasini-bekledigimiz-oyunlar/steam-yaz-indirimlerinde-ucuzlamasini-bekledigimiz-oyunlar-91094" onclick="ga('send', 'event', 'Home - Gallery', 'click', '1. link');">
+										<div class="galeri_img" >
+					<img src="http://cdn.oyungezer.com.tr/images/ogzhilite/galeri/steam-yaz-indirimleri-tahmin.JPG" width="445" height="290" alt="Steam Yaz İndirimlerinde Ucuzlar Dediğimiz Oyunlar">
+					</div>
+					<div class="galeri_info" style="display: table; height: 290px; #position: relative; overflow: hidden;">
+						<div style="display: table-cell; vertical-align: middle;">
+							<div style=" #position: relative; #top: -50%">
+								<h2 class="galeri_title">
+									Steam Yaz İndirimlerinde Ucuzlar Dediğimiz Oyunlar								</h2>
+								<span class="galeri_subtext">
+								<p>Bu oyunların Steam Yaz İndirimleri'nde uygun fiyatlara satılacağını düşünüyoruz Oyungezerler!</p>								</span>
+							 </div>
+						</div>
+					</div>
+				</a>
+			</div>
+					<div id="ogzgaleri_slide1234" class="ogzgaleri_slide" style="width:618px">
+				<a href="http://oyungezer.com.tr/galeri/oyun-kueltuerue/oyunlarla-ilgili-ilginc-bilgiler/oyunlarla-ilgili-ilginc-bilgiler-91002" onclick="ga('send', 'event', 'Home - Gallery', 'click', '2. link');">
+										<div class="galeri_img" >
+					<img src="http://cdn.oyungezer.com.tr/images/ogzhilite/galeri/oyunlar-bilgiler-galeri-hilite.JPG" width="445" height="290" alt="Oyunlardan İlginç Bilgiler">
+					</div>
+					<div class="galeri_info" style="display: table; height: 290px; #position: relative; overflow: hidden;">
+						<div style="display: table-cell; vertical-align: middle;">
+							<div style=" #position: relative; #top: -50%">
+								<h2 class="galeri_title">
+									Oyunlardan İlginç Bilgiler								</h2>
+								<span class="galeri_subtext">
+								<p>Çoğu 2017 ve 2016 çıkışlı olmak üzere oyunlardan ilginç bilgilerden oluşan bir liste hazırladık!</p>								</span>
+							 </div>
+						</div>
+					</div>
+				</a>
+			</div>
+					<div id="ogzgaleri_slide1225" class="ogzgaleri_slide" style="width:618px">
+				<a href="http://oyungezer.com.tr/galeri/en-iyi-kotu-oyun-karakterleri/en-iyi-kotu-oyun-karakterleri-90954" onclick="ga('send', 'event', 'Home - Gallery', 'click', '3. link');">
+										<div class="galeri_img" >
+					<img src="http://cdn.oyungezer.com.tr/images/ogzhilite/galeri/vaas-kotu-adamlar-galerisi.JPG" width="445" height="290" alt="En Sevdiğimiz Kötü Karakterler">
+					</div>
+					<div class="galeri_info" style="display: table; height: 290px; #position: relative; overflow: hidden;">
+						<div style="display: table-cell; vertical-align: middle;">
+							<div style=" #position: relative; #top: -50%">
+								<h2 class="galeri_title">
+									En Sevdiğimiz Kötü Karakterler								</h2>
+								<span class="galeri_subtext">
+								<p>Vaas, Glados, Joker Pagan Min ve daha niceleri. Hepsi birbirinden kötü ve karşımıza çıksalar kesin gözümüzün yaşına bile bakmazlar, ama seviyoruz işte.</p>								</span>
+							 </div>
+						</div>
+					</div>
+				</a>
+			</div>
+					<div id="ogzgaleri_slide1211" class="ogzgaleri_slide" style="width:618px">
+				<a href="http://oyungezer.com.tr/galeri/oyun-kueltuerue/league-of-legends-sampiyonlarinin-ilham-aldigi-karakterler/league-of-legends-sampiyonlarinin-ilham-aldigi-karakterler-90763" onclick="ga('send', 'event', 'Home - Gallery', 'click', '4. link');">
+										<div class="galeri_img" >
+					<img src="http://cdn.oyungezer.com.tr/images/ogzhilite/e3-2016/sidebar/lol-ilham-galerisi-hilite.jpg" width="445" height="290" alt="LoL Şampiyonlarının Esinlendiği Karakterler">
+					</div>
+					<div class="galeri_info" style="display: table; height: 290px; #position: relative; overflow: hidden;">
+						<div style="display: table-cell; vertical-align: middle;">
+							<div style=" #position: relative; #top: -50%">
+								<h2 class="galeri_title">
+									LoL Şampiyonlarının Esinlendiği Karakterler								</h2>
+								<span class="galeri_subtext">
+								<p>League of Legends karakterleri hangi hikayelerden, kimlerden esinlenerek tasarlanmış?</p>								</span>
+							 </div>
+						</div>
+					</div>
+				</a>
+			</div>
+				</div>
+
+</div>
+		<div class="ogzgaleri_menu">
+			<div id='ogzgaleri129_menuitem1262' class='ogzgaleri_menuitem' ></div><div id='ogzgaleri129_menuitem1239' class='ogzgaleri_menuitem' ></div><div id='ogzgaleri129_menuitem1234' class='ogzgaleri_menuitem' ></div><div id='ogzgaleri129_menuitem1225' class='ogzgaleri_menuitem' ></div><div id='ogzgaleri129_menuitem1211' class='ogzgaleri_menuitem' ></div>		</div>
+</div>
+
+
+						</div>
+																<div id="right1" class="grid_4">
+							<div class="bannergroup-300">
+
+	<div class="banneritem">
+										<script src="http://sam.setimedia.com/oyungezer/mr1"></script>				<div class="clr"></div>
+	</div>
+
+</div>
+<div id="ogzhilite_featured123" class="ogzhilite_featured" style="width:100%">
+<div class="module_title">İLGİNİZİ ÇEKEBİLİR</div>		<div class="hilite_featured_wrapper" id="hilite_featured_wrapper">		
+							<div class="hilite_featured_slide0 hilite_featured_slide">
+					<div class="hilite_featured_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/ilginizi-cekebilir/dna-ilginizi-cekebilir.jpg');height:70px;width:300px;">
+					<div class="colorize-featured colorize-red"></div>
+						<a href="http://oyungezer.com.tr/haber/50471-biohacker-lar-insan-dna-sina-zararli-yazilim-yuklemeyi-basardi" target="_blank" onclick="ga('send', 'event', 'Home - Interest', 'click', '0. link');">
+							<div class="hilite_featured_name">
+								Haber							</div>
+							<div class="hilite_featured_title">
+								İnsan DNA'sını "hacklemek"??							</div>
+							<div class="hilite_featured_text">
+															</div>
+						</a>
+					</div>
+				</div>
+							<div class="hilite_featured_slide1 hilite_featured_slide">
+					<div class="hilite_featured_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/ilginizi-cekebilir/got3.jpg');height:70px;width:300px;">
+					<div class="colorize-featured colorize-red"></div>
+						<a href="http://oyungezer.com.tr/haber/50414-game-of-thrones-7-sezon-5-bolum-fragmani" target="_blank" onclick="ga('send', 'event', 'Home - Interest', 'click', '1. link');">
+							<div class="hilite_featured_name">
+								Haber							</div>
+							<div class="hilite_featured_title">
+								Game of Thrones 7. Sezon 5. Bölüm Fragmanı							</div>
+							<div class="hilite_featured_text">
+															</div>
+						</a>
+					</div>
+				</div>
+							<div class="hilite_featured_slide0 hilite_featured_slide">
+					<div class="hilite_featured_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/ilginizi-cekebilir/ilginizi-cekebilir-haftaninoyunlarıtemmuz4.jpg');height:70px;width:300px;">
+					<div class="colorize-featured colorize-red"></div>
+						<a href="http://oyungezer.com.tr/haber/50415-bu-hafta-cikacak-oyunlar-7-agustos-13-agustos" target="_blank" onclick="ga('send', 'event', 'Home - Interest', 'click', '2. link');">
+							<div class="hilite_featured_name">
+								Haberler							</div>
+							<div class="hilite_featured_title">
+								Bu Hafta Çıkacak Oyunlar 							</div>
+							<div class="hilite_featured_text">
+								<p>(7 - 13 Ağustos)</p>							</div>
+						</a>
+					</div>
+				</div>
+							<div class="hilite_featured_slide1 hilite_featured_slide">
+					<div class="hilite_featured_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/ilginizi-cekebilir/spotifyilgcekebilir.jpg');height:70px;width:300px;">
+					<div class="colorize-featured colorize-red"></div>
+						<a href="http://oyungezer.com.tr/haber/50305-turk-mahkemesinden-oyun-hilesi-satan-siteye-agir-ceza-geldihttp://oyungezer.com.tr/haber/50416-populer-muzik-uygulamasi-spotify-kesin-olarak-xbox-one-a-geliyor" target="_blank" onclick="ga('send', 'event', 'Home - Interest', 'click', '3. link');">
+							<div class="hilite_featured_name">
+								Haber							</div>
+							<div class="hilite_featured_title">
+								Spotify Xbox One'da!							</div>
+							<div class="hilite_featured_text">
+															</div>
+						</a>
+					</div>
+				</div>
+							<div class="hilite_featured_slide0 hilite_featured_slide">
+					<div class="hilite_featured_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/ilginizi-cekebilir/imc12-kadinlar.JPG');height:70px;width:300px;">
+					<div class="colorize-featured colorize-red"></div>
+						<a href="http://oyungezer.com.tr/haber/50001-ogz-imc-12-oyunlardaki-kadin-karakterler" target="_blank" onclick="ga('send', 'event', 'Home - Interest', 'click', '4. link');">
+							<div class="hilite_featured_name">
+								İMC #12							</div>
+							<div class="hilite_featured_title">
+								Kadınların Oyunlardaki Temsili							</div>
+							<div class="hilite_featured_text">
+															</div>
+						</a>
+					</div>
+				</div>
+					</div>
+</div>
+						</div>
+														<div class="clear"></div>
+				</div>
+
+				<div class="seconder_wrapper">
+											<div id="left2" class="grid_4">
+							<div id="ogznews125" class="ogznews">
+		<div>
+		<div class="content">
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50536-world-of-tanks-e-tek-kisilik-senaryolar-geliyor#disqus_thread" data-disqus-identifier="118808c821_articleid_50536" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '0. comment link');">0</a></div>
+		<a href="/haber/50536-world-of-tanks-e-tek-kisilik-senaryolar-geliyor" onclick="ga('send', 'event', 'Home - News', 'click', 'second col 0. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/wot-warstories-small.jpg" width="300" height="156" alt="World of Tanks’e Tek Kişilik Senaryolar Geliyor"><br/>
+					<span class='ogztitle'>World of Tanks</span>’e <span class='ogztitle'>Tek Kişilik Senaryolar</span> Geliyor</a>
+		</h4>
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50535-thor-ragnarok-un-son-fragmaninda-doctor-strange-var#disqus_thread" data-disqus-identifier="118808c821_articleid_50535" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '1. comment link');">0</a></div>
+		<a href="/haber/50535-thor-ragnarok-un-son-fragmaninda-doctor-strange-var" onclick="ga('send', 'event', 'Home - News', 'click', 'second col 1. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/thorragnarok.jpg" width="300" height="156" alt="Thor: Ragnarok'un Son Fragmanında Doctor Strange Var"><br/>
+					<span class='ogztitle'>Thor: Ragnarok</span>'un Son Fragmanında <span class='ogztitle'>Doctor Strange</span> Var</a>
+		</h4>
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50534-heyecanla-bekledigimiz-crackdown-3-un-cikis-tarihi-ertelendi#disqus_thread" data-disqus-identifier="118808c821_articleid_50534" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '2. comment link');">0</a></div>
+		<a href="/haber/50534-heyecanla-bekledigimiz-crackdown-3-un-cikis-tarihi-ertelendi" onclick="ga('send', 'event', 'Home - News', 'click', 'second col 2. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/crackdown3-big.jpg" width="300" height="156" alt="Heyecanla Beklediğimiz Crackdown 3'ün Çıkış Tarihi Ertelendi"><br/>
+					Heyecanla Beklediğimiz <span class='ogztitle'>Crackdown 3</span>'ün Çıkış Tarihi <span class='ogztitle'>Ertelendi</span></a>
+		</h4>
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50464-tacoma-inceleme#disqus_thread" data-disqus-identifier="118808c821_articleid_50464" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '3. comment link');">0</a></div>
+		<a href="/haber/50464-tacoma-inceleme" onclick="ga('send', 'event', 'Home - News', 'click', 'second col 3. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/10/tacoma-small.jpg" width="300" height="156" alt="Tacoma - İnceleme"><br/>
+					<span class='ogztitle'>Tacoma</span> - İnceleme</a>
+		</h4>
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50533-the-evil-within-2-nin-yeni-fragmaninda-bir-olum-fotografcisinin-sapik-zihnini-goruyoruz#disqus_thread" data-disqus-identifier="118808c821_articleid_50533" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '4. comment link');">0</a></div>
+		<a href="/haber/50533-the-evil-within-2-nin-yeni-fragmaninda-bir-olum-fotografcisinin-sapik-zihnini-goruyoruz" onclick="ga('send', 'event', 'Home - News', 'click', 'second col 4. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/theevilwithin2-photographer-small.jpg" width="300" height="156" alt="The Evil Within 2'nin Yeni Fragmanı Bir Ölüm Fotoğrafçısının Sapık Zihnini Gösteriyor"><br/>
+					<span class='ogztitle'>The Evil Within 2</span>'nin Yeni Fragmanı Bir Ölüm Fotoğrafçısının <span class='ogztitle'>Sapık Zihnini Gösteriyor</span></a>
+		</h4>
+								<h4 class="ogznews-title">
+			<div class="commentcount"><a href="/haber/50532-total-war-warhammer-2-nin-en-cok-beklenen-irki-skaven-aciga-cikti#disqus_thread" data-disqus-identifier="118808c821_articleid_50532" title="Yorumları göster" onclick="ga('send', 'event', 'Home - News', 'click', '5. comment link');">0</a></div>
+		<a href="/haber/50532-total-war-warhammer-2-nin-en-cok-beklenen-irki-skaven-aciga-cikti" onclick="ga('send', 'event', 'Home - News', 'click', 'second col 5. link');">
+					<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/tw-warhammer2-skaven-small.png" width="300" height="156" alt="Total War: Warhammer 2'nin En Çok Beklenen Irkı Açığa Çıktı - Skaven Savaş Alanında!"><br/>
+					<span class='ogztitle'>Total War: Warhammer 2</span>'nin En Çok Beklenen Irkı Açığa Çıktı - <span class='ogztitle'>Skaven</span> Savaş Alanında!</a>
+		</h4>
+					</div>
+		
+	</div>
+	<a href="/haber" class="ogzmore-link" onclick="ga('send', 'event', 'Home - News', 'click', 'second col\'s read more');">
+		<div class="ogznews-more">TÜM HABERLER
+		<span class="ogzmore-arrow"></span>
+	</div></a>
+</div>
+						</div>
+																<div id="mid2" class="grid_4">
+							<div id="ogzvideo235" class="ogzvideo-ilk10dakika">
+<a href="/video/197-cizgi-roman-sohbetleri" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', 'main title');"><div class="module_title">ÇİZGİ ROMAN SOHBETLERİ</div></a>		<div>
+		<div class="content">
+							<a href="/video/197-cizgi-roman-sohbetleri/1768-peki-superman-nerede-justice-league-fragman-değerlendirmesi" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', '0. link');"><div class="ogzvideo-bigimg" style="background-image:url(images/haberler/2017/03/28/maxresdefault.jpg)"><div class="ogzvideo-bigplayarrow"></div><h4 class="ogzvideo-bigtitle-ilk10dakika">Peki Superman Nerede? - Justice League Fragman Değerlendirmesi</h4><div class="ogzvideo-bigtext-ilk10dakika"></div></div></a>							<a href="/video/197-cizgi-roman-sohbetleri/1756-wonder-woman-dc-evrenini-kurtarabilir-mi-fragman-değerlend" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', '1. link');"><div class="ogzvideo-bigimg" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzvideos/wonder-woman-trailer.jpg')"><div class="ogzvideo-bigplayarrow"></div><h4 class="ogzvideo-bigtitle-ilk10dakika">Wonder Woman DC Evrenini Kurtarabilir mi? </h4><div class="ogzvideo-bigtext-ilk10dakika"></div></div></a>							<div class="ogzvideo-bigmore">DAHASI VAR!</div><a href="/video/197-cizgi-roman-sohbetleri/1745-en-iyi-super-kahraman-filmi-mi-logan-degerlendirmesi-spoiler-var" class="morevideos" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', '2. link');">En İyi Süper Kahraman Filmi mi? - Logan Değerlendirmesi (SPOILER VAR)</a>							<a href="/video/197-cizgi-roman-sohbetleri/1744-avengers-infinity-war-1" class="morevideos" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', '3. link');">Avengers: Infinity War #1  Belgelerle Geldik</a>							<a href="/video/197-cizgi-roman-sohbetleri/1737-yeni-suicide-squad-mi-olacak-gotham-city-sirens" class="morevideos" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', '4. link');">Yeni Suicide Squad Mı Olacak? - Gotham City Sirens</a>							<a href="/video/197-cizgi-roman-sohbetleri/1734-imdat-legion-basladi" class="morevideos" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', '5. link');">İmdat! Legion Başladı!</a>						<script src="https://apis.google.com/js/platform.js"></script>
+			<div class="ogzvideo-video" style="text-align:center;">
+				<h5 style="margin: 5px;">Kanalımıza abone oldunuz mu?</h5>
+				<div class="g-ytsubscribe" data-channel="Oyungezer" data-layout="full" data-count="default"></div>
+			</div>
+				<a href="/video/197-cizgi-roman-sohbetleri" class="ogzmore-link" onclick="ga('send', 'event', 'Home - Comics Videos', 'click', 'read more');">
+		<div class="ogzvideo-more">DAHA FAZLASI		<span class="ogzmore-arrow"></span>
+	</div></a>
+		</div>
+	</div>
+</div><div id="ogznews136" class="ogznews-previous">
+			<a href="/haber"><div class="module_title">DAHA ÖNCEKİ HABERLER</div></a>
+			<div>
+		<div class="ogznews-listwrapper">
+					<a href="/haber/50531-sony-playstation-experience-2017-de-goreceklerimize-dair-bilgiler-vermeye-basladi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '0. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/sony-psx2017-small.jpg" alt="Sony, PlayStation Experience 2017'de Göreceklerimize Dair Bilgiler Vermeye Başladı">
+				<p>
+					Sony, <span class='ogztitle'>PlayStation Experience 2017</span>'de Göreceklerimize Dair <span class='ogztitle'>Bilgiler Vermeye</span> Başladı				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50530-deadly-premonition-in-yaraticisinin-yeni-oyununda-kedi-olacagiz" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '1. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/17/swery-thegoodlife-small.jpg" alt="Deadly Premonition'ın Yaratıcısının Yeni Oyununda Kedi Olacağız">
+				<p>
+					<span class='ogztitle'>Deadly Premonition</span>'ın Yaratıcısının Yeni Oyununda <span class='ogztitle'>Kedi Olacağız</span>				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50529-casey-affleck-ben-affleck-batman-olmayacak" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '2. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/06/16/batman-small.jpg" alt="Casey Affleck: "Ben Affleck Batman Olmayacak"">
+				<p>
+					<span class='ogztitle'>Casey Affleck:</span> "Ben Affleck Batman <span class='ogztitle'>Olmayacak</span>"				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50528-destiny-2-nin-pc-acik-beta-tarihi-aciklandi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '3. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/destin2-beta-small.jpg" alt="Destiny 2'nin PC Açık Beta Tarihi Açıklandı!">
+				<p>
+					<span class='ogztitle'>Destiny 2</span>'nin <span class='ogztitle'>PC Açık Beta Tarihi</span> Açıklandı!				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50527-shadow-of-war-dan-yeni-bir-ork-kabilesi-ortaya-cikti-ve-dehset-saciyor" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '4. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/shadowofwarterror-small.jpg" alt="Shadow of War'dan Yeni Bir Ork Kabilesi Ortaya Çıktı ve Dehşet Saçıyor">
+				<p>
+					<span class='ogztitle'>Shadow of War</span>'dan Yeni Bir <span class='ogztitle'>Ork Kabilesi</span> Ortaya Çıktı ve Dehşet Saçıyor				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50526-world-of-tanks-in-muziklerini-sabaton-ve-silent-hill-den-bildigimiz-akira-yamaoka-besteledi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '5. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/wot-music-sabaton-small.jpg" alt="World of Tanks’in Müziklerini Sabaton ve Silent Hill'den Bildiğimiz Akira Yamaoka Besteledi">
+				<p>
+					World of Tanks’in Müziklerini <span class='ogztitle'>Sabaton</span> ve Silent Hill'den Bildiğimiz <span class='ogztitle'>Akira Yamaoka</span> Besteledi				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50523-uncharted-4-e-yeni-bir-kotu-adam-ekleniyor" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '6. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/small-uncharted-4.jpg" alt="Uncharted 4'e Yeni Bir Kötü Adam Ekleniyor">
+				<p>
+					<span class='ogztitle'>Uncharted 4</span>'e Yeni Bir <span class='ogztitle'>Kötü Adam</span> Ekleniyor				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50525-deadpool-2-nin-setinde-bir-dublor-hayatini-kaybetti" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '7. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/deadpool2-small.jpg" alt="Deadpool 2'nin Setinde Bir Dublör Hayatını Kaybetti">
+				<p>
+					<span class='ogztitle'>Deadpool 2</span>'nin Setinde Bir Dublör <span class='ogztitle'>Hayatını Kaybetti</span>				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50524-eski-adiyla-h1z1-just-survive-a-yeni-bir-harita-kale-sistemi-ve-daha-fazlasi-eklendi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '8. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/just-survive-stronghold-small.jpg" alt="Eski Adıyla H1Z1: Just Survive'a Yeni Bir Harita, Kale Sistemi ve Daha Fazlası Eklendi">
+				<p>
+					Eski Adıyla H1Z1: Just Survive'a <span class='ogztitle'>Yeni Bir Harita</span>, <span class='ogztitle'>Kale Sistemi</span> ve Daha Fazlası Eklendi				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50522-komsular-bir-sure-daha-rahat-hello-neighbor-in-cikisi-ertelendi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '9. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/hello-neighbor-delay-small.jpg" alt="Komşular Bir Süre Daha Rahat - Hello Neighbor'ın Çıkışı Ertelendi">
+				<p>
+					<span class='ogztitle'>Komşular</span> Bir Süre Daha Rahat - <span class='ogztitle'>Hello Neighbor</span>'ın Çıkışı Ertelendi				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50521-rainbow-six-siege-operation-blood-orchid-in-operatorleri-sizdirildi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '10. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/rainbow-six-siege-blood-orchid-small.jpg" alt="Rainbow Six Siege: Operation Blood Orchid'in Operatörleri Sızdırıldı">
+				<p>
+					Rainbow Six Siege: <span class='ogztitle'>Operation Blood Orchid</span>'in Operatörleri <span class='ogztitle'>Sızdırıldı</span>				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50520-bandai-namco-yine-gizemli-isler-pesinde-projekt1514" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '11. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/bandai-project1514-small.jpg" alt="Bandai Namco Yine Gizemli İşler Peşinde: Projekt1514">
+				<p>
+					<span class='ogztitle'>Bandai Namco</span> Yine Gizemli İşler Peşinde: <span class='ogztitle'>Projekt1514</span>				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50519-hbo-spain-yanlislikla-game-of-thrones-un-6-bolumunu-yayinladi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '12. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/16/hbo-got-leak-small.jpg" alt="HBO Spain Yanlışlıkla Game of Thrones'un 6. Bölümünü Yayınladı!">
+				<p>
+					<span class='ogztitle'>HBO Spain</span> Yanlışlıkla <span class='ogztitle'>Game of Thrones</span>'un 6. Bölümünü Yayınladı!				</p>
+			</div>
+			
+			</a>
+					<a href="/haber/50518-football-manager-2018-in-cikis-tarihi-aciklandi" class="ogznews-list" onclick="ga('send', 'event', 'Home - Previous News', 'click', '13. link');">
+			<div class="ogznews-listtitle" style="width:100%!important;">
+				<img src="http://cdn.oyungezer.com.tr/images/haberler/2017/08/15/small-football-manager-2018-sega.jpg" alt="Football Manager 2018'in Çıkış Tarihi Açıklandı">
+				<p>
+					<span class='ogztitle'>Football Manager 2018</span>'in <span class='ogztitle'>Çıkış Tarihi</span> Açıklandı				</p>
+			</div>
+			
+			</a>
+				</div>
+	</div>
+</div>
+						</div>
+																<div id="right2" class="grid_4">
+							<div id="ogzgame" class="ogzgame">
+	<div class="module_title">OYUN TAKVİMİ</div>
+	<div id="gameinfo-legend" class="gameinfo-legend">
+		<span data-filter="all" class="platform platform-select-all" onclick="ga('send', 'event', 'Home - Game Calendar', 'click', 'all');" style="opacity: 1">Hepsi</span>
+		<span data-filter="PS4" class="platform platform-select-ps4" onclick="ga('send', 'event', 'Home - Game Calendar', 'click', 'ps4');" style="opacity: 0.4">PS4</span>
+		<span data-filter="XBONE" class="platform platform-select-xbone" onclick="ga('send', 'event', 'Home - Game Calendar', 'click', 'xbox one');" style="opacity: 0.4">XBONE</span>
+		<span data-filter="PC" class="platform platform-select-pc" onclick="ga('send', 'event', 'Home - Game Calendar', 'click', 'pc');" style="opacity: 0.4">PC</span>
+		<span data-filter="SWITCH" class="platform platform-select-switch" onclick="ga('send', 'event', 'Home - Game Calendar', 'click', 'switch');" style="opacity: 0.4">SWITCH</span>
+		<span data-filter="MOBIL" class="platform platform-select-mobil" onclick="ga('send', 'event', 'Home - Game Calendar', 'click', 'mobil');" style="opacity: 0.4">MOBİL</span>
+	</div>
+	<div class="calendar-list">
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#00ff00"></span>
+				<span class="game-title" title="Absolver">
+											Absolver									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">29 AĞUSTOS</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#0fef00"></span>
+				<span class="game-title" title="Destiny 2">
+											Destiny 2									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">08 EYLÜL</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#1fdf00"></span>
+				<span class="game-title" title="PES 2018">
+											PES 2018									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">12 EYLÜL</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#2fcf00"></span>
+				<span class="game-title" title="NBA 2K18">
+											NBA 2K18									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span><span class="platform-SWITCH platform">SWITCH</span>				<span class="game-date">19 EYLÜL</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#3fbf00"></span>
+				<span class="game-title" title="Project Cars 2">
+											Project Cars 2									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">22 EYLÜL</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#4faf00"></span>
+				<span class="game-title" title="FIFA 18">
+											FIFA 18									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span><span class="platform-SWITCH platform">SWITCH</span>				<span class="game-date">29 EYLÜL</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#5f9f00"></span>
+				<span class="game-title" title="Cuphead">
+											Cuphead									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">29 EYLÜL</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#6f8f00"></span>
+				<span class="game-title" title="Shadow of War">
+											Shadow of War									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">10 EKİM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#7f7f00"></span>
+				<span class="game-title" title="Evil Within 2">
+											Evil Within 2									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">13 EKİM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#8f6f00"></span>
+				<span class="game-title" title="South Park: The Fractured But Whole">
+											South Park: The Fractured But Whole									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">17 EKİM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#9f5f00"></span>
+				<span class="game-title" title="AC: Origins">
+											AC: Origins									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">27 EKİM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#af4f00"></span>
+				<span class="game-title" title="Wolfenstein 2">
+											Wolfenstein 2									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">27 EKİM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#bf3f00"></span>
+				<span class="game-title" title="Mario Odyssey">
+											Mario Odyssey									</span>
+								
+				<span class="platform-SWITCH platform">SWITCH</span>				<span class="game-date">27 EKİM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#cf2f00"></span>
+				<span class="game-title" title="Call of Duty: WWII ">
+											Call of Duty: WWII 									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform- PS4 platform"> PS4</span><span class="platform- XBONE platform"> XBONE</span>				<span class="game-date">03 KASIM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#df1f00"></span>
+				<span class="game-title" title="SW Battlefront 2">
+											SW Battlefront 2									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">17 KASIM</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#ef0f00"></span>
+				<span class="game-title" title="Kingdom Come">
+											Kingdom Come									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">13 ŞUBAT</span>
+			</div>
+					<div class="game-item">
+				<span class="colorbar" style="background-color:#ff0000"></span>
+				<span class="game-title" title="Far Cry 5">
+											Far Cry 5									</span>
+								
+				<span class="platform-PC platform">PC</span><span class="platform-PS4 platform">PS4</span><span class="platform-XBONE platform">XBONE</span>				<span class="game-date">27 ŞUBAT</span>
+			</div>
+			</div>
+</div><script type="text/javascript">
+	function iFrameHeight() {
+		var h = 0;
+		if (!document.all) {
+			h = document.getElementById('blockrandom').contentDocument.height;
+			document.getElementById('blockrandom').style.height = h + 60 + 'px';
+		} else if (document.all) {
+			h = document.frames('blockrandom').document.body.scrollHeight;
+			document.all.blockrandom.style.height = h + 20 + 'px';
+		}
+	}
+</script>
+
+<iframe 	id="blockrandom"
+	name=""
+	src="http://dukkan.oyungezer.com.tr/?view=module"
+	width="100%"
+	height="540px"
+	scrolling="no"
+	frameborder="0"
+	class="wrapper bannergroup-300" >
+	iFrame yok</iframe>
+
+						</div>
+																<div class="clear"></div>
+							<div id="band2" class="grid_12">
+								<div id="ogzhilite_band121" class="ogzhilite_band" >
+		<div class="hilite_band_wrapper" id="hilite_band_wrapper121">
+			<div class="hilite_band_slider" id="hilite_band_slider121" style="width:2820px">
+						<a href="http://oyungezer.com.tr/haber/47614-red-dead-redemption-2-hakkinda-su-ana-kadar-ogrendigimiz-her-sey" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 0. link');">
+				<div id="hilite_band_slide942" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/rdr2-alt-bant.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-blue"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><p style="text-align: center;"><span></span><span>Red Dead Redemption 2:<br />Açıklanan Her Şey</span></p>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/47624-indie-nobeti-bolum-1" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 1. link');">
+				<div id="hilite_band_slide936" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/indie-nobeti.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-red"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><p style="text-align: center;">Dosya:<br />Indie Nöbeti #1</p>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/44034-dosya-konusu-ozledigimiz-yancilar" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 2. link');">
+				<div id="hilite_band_slide937" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/ozledigimiz-yancilar.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-purple"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><p style="text-align: center;"><span>Dosya:</span><br /><span>Özlediğimiz Yancılar</span></p>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/43672-dosya-konusu-izlemeniz-gereken-belgeseller" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 3. link');">
+				<div id="hilite_band_slide938" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/belgeseller.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-green"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><p style="text-align: center;"><span>Dosya:</span><br /><span>İzlemeniz Gereken Belgeseller</span></p>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/43403-tamamlanmamis-oyunlar" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 4. link');">
+				<div id="hilite_band_slide939" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/tamamlanmamis-oyunlar.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-blue"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><p style="text-align: center;"><span>Dosya:</span><br /><span>Tamamlanmamış Oyunlar<br /></span></p>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/36549-kulagi-gecen-boynuzlar-en-iyi-ikinci-oyunlar-no1" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 5. link');">
+				<div id="hilite_band_slide134" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/bnt-devam.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-green"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div style="text-align: center;">Dosya:<br />Kulağı Geçen Boynuzlar #1</div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/36570-gunumuz-oyuncularinin-anlayamayacagi-10-sey" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 6. link');">
+				<div id="hilite_band_slide10" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/bnt-gunumuz.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-red"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div>Dosya:</div>
+<div>Günümüz Oyuncularının Anlayamayacakları Şeyler</div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/36580-devami-gelmeyecegi-icin-kahroldugumuz-oyunlar" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 7. link');">
+				<div id="hilite_band_slide32" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/bnt-devami-yok.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-purple"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div>Galeri:</div>
+<div>Devamı Gelmeyeceği İçin Üzen Oyunlar</div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/haber/36675-adam-gibi-oyun-1" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 8. link');">
+				<div id="hilite_band_slide31" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/bnt-adam-gibi.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-blue"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div>Galeri:<br />Adam Gibi Mobil Oyunlar #1</div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/ozel-dosyalar/33863-xbox-one-mi-ps4-mu" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 9. link');">
+				<div id="hilite_band_slide9" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/xboxps4-hl1.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-red"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div><span>OGZ Ailesi Cevapladı: "PS4 Mü Xbox One Mı?"</span></div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/ozel-dosyalar/33967-the-elder-scrolls-online-ilk-bakis" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 10. link');">
+				<div id="hilite_band_slide71" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/elderso-hl1.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-blue"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div>The Elder Scrolls Online: İlk Bakış</div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						<a href="http://oyungezer.com.tr/ozel-dosyalar/33264-assassins-creed-4-jean-guesdon-roportaji" onclick="ga('send', 'event', 'Home - Band', 'click', '121. bant 11. link');">
+				<div id="hilite_band_slide30" class="hilite_band_slide">
+					<div class="hilite_band_img" style="background-image: url('http://cdn.oyungezer.com.tr/images/ogzhilite/bant/ac4-roportaj-hl1.jpg');height:135px;width:225px;">
+					<div class="colorize colorize-blue"></div>
+							<div style=" #position: absolute; #top: 50%;display: table-cell; vertical-align: middle;">
+							<div class="hilite_band_text"><div>Assassin's Creed IV'ün Kreatif Direktörüyle Özel Röportaj</div>							</div>
+							</div>
+					</div>
+				</div>
+			</a>
+						</div>
+		</div>
+		<div class="hilite_band_btn btn_left" id="btn_left121"></div>
+		<div class="hilite_band_btn btn_right" id="btn_right121"></div>
+</div>
+
+							</div>
+						<div class="clear"></div>
+									</div>
+		</div>
+						<div id="footer" >
+				<a href="http://setimedia.com" target="_blank"><img src="http://cdn.oyungezer.com.tr/templates/oyungezer/images/setimedia.png" alt="Setimedia" width="150" height="24"></a>
+				
+<ul class="menu">
+<li class="item-236"><a class="footer-menu" href="/"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'Ana Sayfa');">Ana Sayfa</a></li><li class="item-314"><a class="footer-menu" href="/hakkimizda"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'hakkimizda');">Hakkımızda</a></li><li class="item-316"><a class="footer-menu" href="/reklam"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'reklam');">Reklam</a></li><li class="item-328"><a class="footer-menu" href="/yazarlar"  onclick="ga('send', 'event', 'Home - Menu', 'click', 'yazarlar');">Yazarlar</a></li><li class="item-331"><a class="footer-menu" href="http://dukkan.oyungezer.com.tr" target="_blank" onclick="ga('send', 'event', 'Home - Menu', 'click', 'http://dukkan.oyungezer.com.tr');" >OGZ Abonelik ve Satış</a></li></ul>
+
+				<a href="http://www.saglayici.com/" target="_blank"><img src="http://cdn.oyungezer.com.tr/templates/oyungezer/images/saglayici.png" style="float:right;margin-right: 15px;" alt="Powered by Sağlayıcı"></a>
+		</div>
+		<div id="top-link">
+			<a href="#top" onclick="goToTop(event)">
+				<span>Yukarı Git</span>
+			</a>
+		</div>
+		<div id="home-link">
+			<a href="javascript:void(0)" onclick="goToHome(event)">
+				<span>Anasayfaya Dön</span>
+			</a>
+		</div>
+		<script type="text/javascript">
+			window.addEvent('scroll',function(e) {
+				if (window.getScroll().y > 100) {
+					$$('#top-link').setStyles({
+						visibility: "visible",
+						opacity: "1",
+						bottom: "30px"
+					});
+					if (window.location.pathname != '/'){
+						$$('#home-link').setStyles({
+							visibility: "visible",
+							opacity: "1",
+							bottom: "30px"
+						});
+					}
+				} else {
+					$$('#top-link').setStyles({
+						visibility: "hidden",
+						opacity: "0",
+						bottom: "-92px"
+					});
+					if (window.location.pathname != '/'){
+						$$('#home-link').setStyles({
+							visibility: "hidden",
+							opacity: "0",
+							bottom: "-92px"
+						});
+					}
+				}
+			});
+
+			function goToTop(e) {
+			    e.preventDefault();
+			    var scrollToTop = window.setInterval(function() {
+			        var pos = window.pageYOffset;
+			        if (pos > 0) {
+			            window.scrollTo( 0, pos - 50 );
+			        } else {
+			            window.clearInterval(scrollToTop);
+			        }
+			    }, 5);
+			}
+			function goToHome(e) {
+			    e.preventDefault();
+			    window.location = "/";
+			}
+						function createCookie(name,value,days) {
+				if (days) {
+					var date = new Date();
+					date.setTime(date.getTime()+(days*24*60*60*1000));
+					var expires = "; expires="+date.toGMTString();
+				}
+				else var expires = "";
+				document.cookie = name+"="+value+expires+"; path=/";
+			}
+
+			function readCookie(name) {
+				var nameEQ = name + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1,c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+				}
+				return null;
+			}
+
+			function eraseCookie(name) {
+				createCookie(name,"",-1);
+			}
+
+			var showHideFBWidget = function() {
+				if (window.getScroll().y > 300) {
+					showHide('show');
+				} else {
+					showHide('hide');
+				}
+			};
+
+			function showHide(type) {
+				if (type == 'show')
+					$$('#fb-wrapper').setStyles({
+						visibility: "visible",
+					});
+				else if (type == 'hide') {
+					$$('#fb-wrapper').setStyles({
+						visibility: "hidden",
+					});
+				}
+			}
+
+			function closeFB() {
+				showHide('hide');
+				createCookie('fb_wrapper', 'hide', 1);
+				window.removeEvent('scroll', showHideFBWidget);
+			}
+
+			if (!readCookie('fb_wrapper')) {
+				window.addEvent('scroll', showHideFBWidget);
+			}
+		</script>
+		<style type="text/css">
+			#fb-wrapper {
+			    position: fixed;
+			    bottom: 0px;
+			    z-index: 99999;
+			    background-color: #2B343B;
+			    width: 100%;
+			    visibility: hidden;
+			}
+			.fb-module {
+				width: 980px;
+			    margin: 10px auto;
+			    position: relative;
+			}
+			.fb-left {
+			    width: 685px;
+			    float: left;
+			    font-size: 17px;
+			    font-weight: normal;
+			    padding: 15px 0 0 25px;
+			    color: #fff;
+			}
+			.fb-right {
+			    width: 270px;
+    			float: left;
+			}
+			.fb-page-logo {
+			    background-image: url('http://cdn.oyungezer.com.tr/images/ogz-mini-logo.jpg');
+			    background-repeat: no-repeat;
+			    width: 46px;
+			    height: 46px;
+			    display: block;
+			    float: left;
+			    margin-right: 11px;
+			}
+			.fb-columns {
+			    width: 210px;
+    			float: left;
+			}
+			.fb-columns a {
+				display: block;
+			    text-decoration: none;
+			    color: #fff;
+			    margin-bottom: 5px;
+			    font-size: 14px;
+			    font-weight: normal;
+			}
+			.fb-columns a span {
+				font-size: 12px;
+    			font-weight: normal;
+			}
+			#close-fb {
+			    background-image: url('http://cdn.oyungezer.com.tr/images/fb-widget-close.png');
+			    background-repeat: no-repeat;
+			    width: 30px;
+			    height: 30px;
+			    display: block;
+			    position: absolute;
+			    right: 0px;
+			    top: -5px;
+			    cursor: pointer;
+			}
+			@media screen and (max-width: 414px) {
+				#fb-wrapper {
+					display: none !important;
+				}
+			}
+		</style>
+		<div id="fb-wrapper">
+			<div class="fb-module">
+				<div class="fb-left">
+				Oyungezer'i beğendiniz mi? Biz de size karşı boş değiliz.
+				</div>
+				<div class="fb-right">
+					<a href="https://www.facebook.com/oyungezer" class="fb-page-logo" target="_blank"></a>
+					<div class="fb-columns">
+						<a href="https://www.facebook.com/oyungezer" target="_blank">Oyungezer <span>Facebook'ta!</span></a>
+						<div class="fb-iframe-widget">
+							<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Foyungezer&width=79&layout=button_count&action=like&size=small&show_faces=false&share=false&height=21&appId=734832129893785" width="79" height="21" style="width:100%;border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div onclick="closeFB();" id="close-fb"></div>
+			</div>
+		</div>
+	
+				<!-- JoomlaWorks "DISQUS Comments for Joomla!" (v3.2) -->
+				<script type="text/javascript">
+					//<![CDATA[
+					var disqus_shortname = 'oyungezer';
+					var disqus_config = function(){
+						this.language = 'tr';
+					};
+					(function () {
+						var s = document.createElement('script'); s.async = true;
+						s.type = 'text/javascript';
+						s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+						(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+					}());
+					//]]>
+				</script>
+			
+
+</body>
+</html>
